@@ -41,7 +41,7 @@ test.only("when state is not valid, calling .change() should throw an error", ()
     expect(() => stoplight.change()).toThrow()
 })
 
-test("should have a event registration function .on()", () => {
+test.only("should have a event registration function .on()", () => {
     const stoplight = new Stoplight()
     expect(typeof stoplight.on).toEqual('function')
 })

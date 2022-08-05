@@ -1,8 +1,8 @@
 class Stoplight {
     constructor() {
         this.state = 'red'
-        
     }
+
         change() {
             if(this.state === 'red'){
                 this.state = 'green'
@@ -13,6 +13,10 @@ class Stoplight {
             } else if (this.state !== ('red' || 'yellow' || 'green')) {
                 throw new Error()
             }
+        }
+
+        on() {
+            // event registration function goes here
         }
 }
     
