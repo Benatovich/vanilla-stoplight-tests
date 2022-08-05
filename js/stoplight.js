@@ -15,8 +15,12 @@ class Stoplight {
             }
         }
 
-        on() {
-            // event registration function goes here
+        on(a, b) {
+            if(b instanceof Function) {
+                return `${b} is a function`
+            } else {
+                throw new Error()
+            }
         }
 }
     

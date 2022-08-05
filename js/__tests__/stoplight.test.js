@@ -46,7 +46,7 @@ test.only("should have a event registration function .on()", () => {
     expect(typeof stoplight.on).toEqual('function')
 })
 
-test(".on should throw an exception if it's not passed a function as its second argument", () => {
+test.only(".on should throw an exception if it's not passed a function as its second argument", () => {
     const stoplight = new Stoplight()
     expect(typeof stoplight.on).toEqual('function')
     expect(() => stoplight.on('change', 'not a function')).toThrow()
