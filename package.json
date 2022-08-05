@@ -1,0 +1,15 @@
+{
+  "name": "popart-stoplight-01-vanilla-es6",
+  "version": "2.0.0",
+  "description": "Pop Art Stoplight Exercise: Vanilla ES6",
+  "main": "js/stoplight.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "author": "Dylan Hallstrom <dylan.hallstrom@pop-art.com>",
+  "license": "private",
+  "repository": "bitbucket:popartinc/exercises-stoplight-template.git",
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
+}
