@@ -1,7 +1,7 @@
 class Stoplight {
     constructor() {
         this.state = 'red'
-        console.log('state|', this.state);
+        
     }
         change() {
             if(this.state === 'red'){
@@ -10,8 +10,8 @@ class Stoplight {
                 this.state = 'yellow'
             } else if (this.state === 'yellow') {
                 this.state = 'red'
-            } else if (this.state === undefined) {
-                throw 'error'
+            } else if (this.state !== ('red' || 'yellow' || 'green')) {
+                throw new Error()
             }
         }
 }
