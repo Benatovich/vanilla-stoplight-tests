@@ -52,7 +52,7 @@ test.only(".on should throw an exception if it's not passed a function as its se
     expect(() => stoplight.on('change', 'not a function')).toThrow()
 })
 
-test("when state is red, calling .change() should emit 'change' event with argument \"green\"", done => {
+test.only("when state is red, calling .change() should emit 'change' event with argument \"green\"", done => {
     const stoplight = new Stoplight()
     let immediate = 'invoked synchronously'
     stoplight.on('change', state => {
