@@ -6,7 +6,7 @@ class Stoplight {
 
         change() { 
             if(this.state === 'red'){
-                if(this.changeHandler !== null){
+                if(this.changeHandler instanceof Function){
                     this.changeHandler('green')
                 }
                 this.state = 'green';
@@ -24,20 +24,11 @@ class Stoplight {
             if(!(handler instanceof Function)) {
                 throw new Error(`${handler} is not a function`)
             } 
-            if(!this.changeHandler[eventName]){
-                this.changeHandler[eventName] = [];
+            if(eventName === 'change'){
+                this.changeHandler = handler;
             }
-            this.changeHandler[eventName].push(handler)
-        }
-        // on(eventName, handler) {
-        //     if(!(handler instanceof Function)) {
-        //         throw new Error(`${handler} is not a function`)
-        //     } 
-        //     if(eventName === 'change'){
-        //         this.changeHandler = handler;
-        //     }
 
-        // }
+        }
         
 }
     
