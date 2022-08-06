@@ -16,6 +16,9 @@ class Stoplight {
                 }
                 this.state = 'yellow'
             } else if (this.state === 'yellow') {
+                if(this.changeHandler instanceof Function){
+                    this.changeHandler('red')
+                }
                 this.state = 'red'
             } else if (this.state !== ('red' || 'yellow' || 'green')) {
                 throw new Error()
