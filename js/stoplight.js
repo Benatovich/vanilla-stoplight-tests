@@ -1,27 +1,46 @@
 class Stoplight {
     constructor() {
         this.state = 'red'
+        this.changeHandler = {};
     }
 
-        change() {
+        change() { 
             if(this.state === 'red'){
-                this.state = 'green'
-            } else if (this.state === 'green'){
-                this.state = 'yellow'
-            } else if (this.state === 'yellow') {
-                this.state = 'red'
-            } else if (this.state !== ('red' || 'yellow' || 'green')) {
-                throw new Error()
-            }
-        }
+                if(this.changeHandler instanceof Function){
+                    this.changeHandler('green')
+                }
+                this.state = 'green';
+            } else 
 
-        on(a, b) {
-            if(b instanceof Function) {
-                return `${b} is a function`
-            } else {
+            if (this.state === 'green'){
+                if(this.changeHandler instanceof Function){
+                    this.changeHandler('yellow')
+                }
+                this.state = 'yellow'
+            } else 
+
+            if (this.state === 'yellow') {
+                if(this.changeHandler instanceof Function){
+                    this.changeHandler('red')
+                }
+                this.state = 'red'
+            } else 
+
+            if (this.state !== ('red' || 'yellow' || 'green')) {
                 throw new Error()
             }
         }
+        
+        on(eventName, handler) {
+            if(!(handler instanceof Function)) {
+                throw new Error(`${handler} is not a function`)
+            } 
+            if(eventName !== null){
+                this.changeHandler = handler;
+            }
+
+        }
+        
 }
     
 module.exports = Stoplight
