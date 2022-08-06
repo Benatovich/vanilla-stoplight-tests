@@ -10,8 +10,10 @@ class Stoplight {
                     this.changeHandler('green')
                 }
                 this.state = 'green';
-                console.log('|!3', this.state)
             } else if (this.state === 'green'){
+                if(this.changeHandler instanceof Function){
+                    this.changeHandler('yellow')
+                }
                 this.state = 'yellow'
             } else if (this.state === 'yellow') {
                 this.state = 'red'

@@ -64,7 +64,7 @@ test.only("when state is red, calling .change() should emit 'change' event with 
     stoplight.change() // from red (initial state) to green
 })
 
-test("when state is green, calling .change() should emit 'change' event with argument \"yellow\"", done => {
+test.only("when state is green, calling .change() should emit 'change' event with argument \"yellow\"", done => {
     const stoplight = new Stoplight()
     let immediate = 'invoked synchronously'
     stoplight.change() // from red (initial state) to green
